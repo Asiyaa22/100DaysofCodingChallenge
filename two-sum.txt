@@ -1,0 +1,15 @@
+function addNum(nums, target){
+    //creating hashMap object
+    let hashMap = {};
+
+    for(let i = 0; i<nums.length; i++){
+        let hashEle = target - nums[i];
+        if(hashMap.hasOwnProperty(hashEle)){ //checking if hashElement is present in hasMap
+            return [hashMap[hashEle], i];
+        }
+        hashMap[nums[i]] = i; //store the currnet number index in hashMap
+    }
+    return null; //return null if solution is not found
+}
+
+console.log(addNum([1, 2, 3, 5], 5));
